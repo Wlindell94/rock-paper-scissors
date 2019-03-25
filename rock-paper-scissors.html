@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+
+    function getRandom(number){
+      return Math.floor(Math.random()*number);
+    }
+
+    function computerPlay(){
+      let computerchoice = getRandom(3);
+      let result;
+      switch (computerchoice){
+        case 0:
+          result = 'rock';
+          break;
+        case 1:
+          result = 'paper';
+          break;
+        case 2:
+          result = 'scissors';
+          break;
+      }
+      return result;
+    }
+
+
+
+
+    function playRound(){
+      let computerSelection = computerPlay();
+      let playerSelection = window.prompt("Please pick rock, paper, or scissors");
+
+      if (playerSelection.toLowerCase() === computerPlay()){
+        return ("It's a tie!");
+      } else if (playerSelection.toLowerCase() === 'rock' && computerPlay() === 'paper'){
+        return ("You lose!");
+      } else if (playerSelection.toLowerCase() === 'rock' && computerPlay() === 'scissors'){
+        return ("You win!");
+      }else if (playerSelection.toLowerCase() === 'paper' && computerPlay() === 'scissors'){
+        return ("You lose!");
+      }else if (playerSelection.toLowerCase() === 'paper' && computerPlay() === 'rock'){
+        return ("You win!");
+      }else if (playerSelection.toLowerCase() === 'scissors' && computerPlay() === 'rock'){
+        return ("You lose!");
+      }else if (playerSelection.toLowerCase() === 'scissors' && computerPlay() === 'paper'){
+        return ("You win!");
+      }else{
+        return ("You need to pick rock, paper, or scissors....");
+      }
+    }
+
+    function game(){
+
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>
